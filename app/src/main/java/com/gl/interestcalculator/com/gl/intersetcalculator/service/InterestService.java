@@ -2,10 +2,10 @@ package com.gl.interestcalculator.com.gl.intersetcalculator.service;
 
 public interface InterestService {
     /**
-     *
-     * @param amount
-     * @param year
-     * @param rate
+     * a
+     * @param amount a
+     * @param year a
+     * @param rate 2
      * @return
      */
     public double calculateSimpleInterest(double amount, int year, double rate);

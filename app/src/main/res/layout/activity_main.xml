@@ -4,141 +4,146 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:padding="10dp">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="140dp"
-        android:layout_marginTop="92dp"
+        android:layout_centerHorizontal="true"
         android:textSize="30dp"
         android:text="Calculate Interest"
         android:textAppearance="@style/TextAppearance.AppCompat.Menu" />
 
-    <EditText
-        android:id="@+id/amountText"
+     <LinearLayout
+         android:id="@+id/infoLayout"
+         android:layout_centerVertical="true"
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:layout_below="@+id/textView"
+         android:paddingBottom="50dp"
+         android:orientation="vertical">
+
+         <LinearLayout
+             android:id="@+id/amountLayout"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal"
+             android:paddingLeft="30dp"
+             android:layout_below="@+id/textView"
+             android:layout_marginTop="20dp"
+             android:weightSum="1">
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/textViewAmount"
+                 android:text="Amount"
+                 android:layout_weight="0.3"/>
+
+             <EditText
+                 android:id="@+id/amountText"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:hint="amount"
+                 android:inputType="numberDecimal"
+                 android:background="@color/colorPrimary"
+                 android:layout_weight="0.8
+"/>
+         </LinearLayout>
+
+         <LinearLayout
+             android:id="@+id/rateLayout"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal"
+             android:paddingLeft="30dp"
+             android:layout_below="@+id/textView"
+             android:layout_marginTop="20dp"
+             android:weightSum="1">
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/textViewRate"
+                 android:text="Rate Of Interest"
+                 android:layout_weight="0.3"/>
+
+             <EditText
+                 android:id="@+id/rateText"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:hint="rate"
+                 android:inputType="numberDecimal"
+                 android:background="@color/colorPrimary"
+                 android:layout_weight="0.8
+"/>
+         </LinearLayout>
+
+         <LinearLayout
+             android:id="@+id/yearLayout"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal"
+             android:paddingLeft="30dp"
+             android:layout_below="@+id/textView"
+             android:layout_marginTop="20dp"
+             android:weightSum="1">
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/textViewYear"
+                 android:text="Year"
+                 android:layout_weight="0.3"/>
+
+             <EditText
+                 android:id="@+id/yearText"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:hint="year"
+                 android:inputType="number"
+                 android:background="@color/colorPrimary"
+                 android:layout_weight="0.8"/>
+         </LinearLayout>
+
+     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="171dp"
-        android:layout_marginLeft="171dp"
-        android:layout_marginTop="172dp"
-        android:background="@color/colorPrimary"
-        android:ems="10"
-        android:inputType="numberDecimal" />
+        android:layout_below="@id/infoLayout"
+        android:orientation="horizontal"
+        android:paddingBottom="50dp">
 
-    <EditText
-        android:id="@+id/yearText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="183dp"
-        android:layout_marginLeft="183dp"
-        android:layout_marginTop="260dp"
-        android:background="@color/colorPrimary"
-        android:ems="10"
-        android:inputType="number" />
+        <Button
+            android:id="@+id/simpleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calculate Simple Interest"
+            android:layout_weight="0.8"
+            />
 
-    <EditText
-        android:id="@+id/rateText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="27dp"
-        android:layout_marginRight="27dp"
-        android:layout_marginBottom="250dp"
-        android:background="@color/colorPrimary"
-        android:ems="10"
-        android:inputType="numberDecimal" />
+        <Button
+            android:id="@+id/compoundButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calculate Compound Interest"
+            android:layout_weight="0.8"
+            />
 
-    <Button
-        android:id="@+id/simpleButton"
-        android:layout_width="160dp"
-        android:layout_height="59dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginBottom="148dp"
-        android:background="@color/colorPrimary"
-        android:text="Calculate Simple Interest" />
 
-    <Button
-        android:id="@+id/compoundButton"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="148dp"
-        android:background="@color/colorPrimary"
-        android:text="Calculate Compound Interest" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="55dp"
-        android:layout_marginLeft="55dp"
-        android:layout_marginTop="169dp"
-        android:text="Amount"
-        android:textSize="20dp" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="22dp"
-        android:layout_marginLeft="22dp"
-        android:layout_marginTop="254dp"
-        android:text="No.Of Years"
-        android:textSize="20dp" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginBottom="259dp"
-        android:text="Rate Of Interest"
-        android:textSize="20dp" />
+    </LinearLayout>
 
     <EditText
         android:id="@+id/editTextAnswer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="78dp"
-        android:layout_marginRight="78dp"
-        android:layout_marginBottom="60dp"
-        android:ems="10"
+        android:layout_below="@id/buttonLayout"
         android:hint="Calculated Interest"
-        android:inputType="textPersonName" />
-
+        android:layout_weight="0.8"
+        android:layout_centerHorizontal="true"
+        />
 </RelativeLayout>
